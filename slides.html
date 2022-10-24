@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>reveal-md</title>
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="./dist/reset.css" />
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="./dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/base16/zenburn.css" />
+
+    <link rel="stylesheet" href="./_assets/style.css" />
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template"># Git 101
+#### Jakub Bosak
+#### Akademickie Stowarzyszenie Informatyczne
+</script></section><section  data-markdown><script type="text/template">
+# About Version Control
+</script></section><section  data-markdown><script type="text/template">
+# What is Git?
+
+* Snapshots, Not differences
+* has integrity
+* only adds data
+* three states
+</script></section><section  data-markdown><script type="text/template">
+## Three states
+
+![Three states](images/three_states.png)
+</script></section><section  data-markdown><script type="text/template">
+## setup your identity
+
+```
+git config --global user.name "Jakub Bosak"
+git config --global user.email "jBosak98@gmail.com"
+```
+</script></section><section  data-markdown><script type="text/template">
+## your editor
+
+```
+git config --global core.editor vim
+```
+</script></section><section  data-markdown><script type="text/template">
+## You can check your settings
+
+```
+git config --list
+```
+</script></section><section  data-markdown><script type="text/template">
+## let's get started
+
+```
+git init
+git add .
+git commit -m "Initial commit"
+```
+</script></section><section  data-markdown><script type="text/template">
+## Cloning an existing repository
+
+```
+git clone git://git.kernel.org/pub/scm/git/git.git
+```
+</script></section><section  data-markdown><script type="text/template">
+
+## Recording Changes to the Repository
+
+![lifecycle](images/lifecycle.png)
+</script></section><section  data-markdown><script type="text/template">
+
+## Checking the Status of Your Files
+
+```
+git status
+```
+</script></section><section  data-markdown><script type="text/template">## tracking new files
+
+```
+git add .
+```
+</script></section><section  data-markdown><script type="text/template">## staging the files
+###### the same command
+```
+git add .
+
+```
+</script></section><section  data-markdown><script type="text/template">
+## ignore files
+
+.gitignore
+</script></section><section  data-markdown><script type="text/template">
+## viewing changes
+
+#### unstaged files: 
+```
+git diff
+```
+
+#### staged files: 
+```
+git diff --cached
+```
+
+## commiting the changes
+```
+git commit
+```</script></section><section  data-markdown><script type="text/template">
+## DEMO
+
+
+</script></section></div>
+    </div>
+
+    <script src="./dist/reveal.js"></script>
+
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./plugin/zoom/zoom.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/math/math.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath
+        ]
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>
