@@ -124,3 +124,15 @@ git commit
 ## DEMO
 
 
+---
+
+## How to write commit message?
+
+#### [whatthecommit](http://www.whatthecommit.com/)
+
+---
+
+
+## How to write commit message?
+
+#### [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/)
